@@ -19,6 +19,6 @@
 		"seedrandom": "2.4.x",
 	},
 	"scripts": {
-		"test": "istanbul cover _mocha -- --recursive tests && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+		"test": "istanbul cover _mocha -- --recursive tests"
 	}
 }
