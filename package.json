@@ -1,0 +1,20 @@
+{
+    "name": "algos",
+    "version": "0.1.0",
+    "description": "Implementation of some CS algorithms in js",
+    "keywords": ["algorithms"],
+    "homepage": "https://github.com/all3fox/algos-js",
+    "bugs": "https://github.com/all3fox/algos-js/issues",
+    "license": "MIT",
+    "repository": {
+	"type": "git",
+	"url": "https://github.com/all3fox/algos-js.git"
+    },
+    "devDependencies": {
+	"mocha": "2.4.x",
+	"seedrandom": "2.4.x"
+    },
+    "scripts": {
+	"test": "mocha --recursive tests"
+    }
+}
