@@ -6,19 +6,17 @@ var sort = require("../../src/sort/mergesort.js");
 describe("Test mergesort", function() {
 	var sorts = [sort.mergesort0, sort.mergesort1];
 
+	describe("on no arguments", function() {
+		for (var sort of sorts) {
+			it(sort.name, function() {
+				assert.equal(sort(), undefined);
+			});
+		}
+	});
+
 	describe("on empty array", function() {
 		for (var sort of sorts) {
-			it(sort.name + ', inplace array', function() {
-				var xs = sort([]);
-				assert.deepEqual(xs, []);
-			});
-
-			it(sort.name + ', separate array', function() {
-				var xs = [];
-
-				var ys = sort(xs);
-				assert.deepEqual(xs, ys);
-			});
+			cs.check_on_empty(sort);
 		}
 	});
 

@@ -14,6 +14,25 @@ function irandom(min, max) {
 	return Math.floor(Math.random() * (max - min)) + min;
 }
 
+function check_on_empty(sort) {
+	it(sort.name + ', inplace array', function() {
+		var xs = sort([]);
+		assert.equal(xs === undefined || xs.length === 0, true);
+	});
+
+	it(sort.name + ', separate array', function() {
+		var xs = [];
+
+		var ys = sort(xs);
+		if (ys === undefined) {
+			assert.deepEqual(xs, []);
+		} else {
+			assert.deepEqual(xs, []);
+			assert.deepEqual(ys, []);
+		}
+	});
+}
+
 function check_on_sorted(sort, n, reversed) {
 	var xs = [], ys = [];
 	if (!reversed) {
@@ -35,7 +54,6 @@ function check_on_sorted(sort, n, reversed) {
 	} else {
 		it(sort.name + ", length " + n, function() {
 			assert.deepEqual(xs, zs);
-			assert.equal(issorted(xs), true);
 			assert.equal(issorted(ys), true);
 		});
 	}
@@ -60,11 +78,12 @@ function check_on_random(sort, n, seed) {
 		});
 	} else {
 		it(sort.name + ", length " + n, function() {
-			assert.equal(issorted(xs), true);
+			assert.deepEqual(xs, zs);
 			assert.equal(issorted(ys), true);
 		});
 	}
 }
 
+exports.check_on_empty  = check_on_empty;
 exports.check_on_sorted = check_on_sorted;
 exports.check_on_random = check_on_random;
