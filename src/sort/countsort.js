@@ -1,22 +1,24 @@
+var assert = require("assert");
+
 function countsort0(xs) {
-	function csort(xs, lo, hi) {
+	function csort(xs, mi, ma) {
 		var ys = [];
 		for (var i = 0; i < xs.length; ++i)
 			ys[i] = 0;
 
-		var counts = [];
-		for (var i = 0; i < hi - lo + 1; ++i)
-			counts[i] = 0;
+		var cs = [];
+		for (var i = 0; i < ma - mi + 2; ++i)
+			cs[i] = 0;
 
 		for (var x of xs)
-			counts[xs - lo + 1]++;
+			cs[x - mi + 1]++;
 
-		for (var i = 1; i < counts.length; ++i)
-			counts[i] += counts[i - 1];
+		for (var i = 1; i < cs.length; ++i)
+			cs[i] += cs[i - 1];
 
 		for (var x of xs) {
-			ys[counts[x - lo]] = x;
-			counts[x - lo]++;
+			ys[cs[x - mi]] = x;
+			cs[x - mi]++;
 		}
 
 		return ys;
@@ -25,7 +27,19 @@ function countsort0(xs) {
 	if (xs === undefined)
 		return undefined;
 
-	return csort(xs, Math.min(xs), Math.max(xs));
+	if (xs.length == 0)
+		return [];
+
+	var mi = xs[0], ma = xs[0];
+
+	for (var x of xs) {
+		if (x < mi)
+			mi = x;
+		if (x > ma)
+			ma = x;
+	}
+
+	return csort(xs, mi, ma);
 }
 
 
