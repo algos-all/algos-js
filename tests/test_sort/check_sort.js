@@ -34,7 +34,7 @@ function check_on_empty(sort) {
 }
 
 function check_on_sorted(sort, n, reversed) {
-	var xs = [], ys = [];
+	var xs = [];
 	if (!reversed) {
 		for (var i = 0; i < n; ++i)
 			xs[i] = i;
@@ -43,18 +43,26 @@ function check_on_sorted(sort, n, reversed) {
 			xs[i] = i;
 	}
 
+	var ys = [];
+	for (var i = 0; i < n; ++i)
+		ys[i] = i;
+
 	var zs = xs.slice();
 
-	ys = sort(xs);
+	var rs = sort(xs);
 
-	if (ys === undefined) {
+	if (rs === undefined) {
 		it(sort.name + ", length " + n, function() {
+			assert.deepEqual(xs, ys);
+
 			assert.equal(issorted(xs), true);
 		});
 	} else {
 		it(sort.name + ", length " + n, function() {
 			assert.deepEqual(xs, zs);
-			assert.equal(issorted(ys), true);
+			assert.deepEqual(rs, ys);
+
+			assert.equal(issorted(rs), true);
 		});
 	}
 }
