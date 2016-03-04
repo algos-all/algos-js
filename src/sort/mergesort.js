@@ -1,36 +1,45 @@
 function mergesort0(xs) {
-	if (xs === undefined || xs.length <= 1)
-		return xs
+	function mergesort(xs, fst, lst) {
+		var ys = xs.slice(fst, lst);
 
-	var n = Math.floor(xs.length / 2);
-	var m = xs.length;
+		if (ys.length <= 1)
+			return ys;
 
-	var ls = mergesort0(xs.slice(0, n));
-	var rs = mergesort0(xs.slice(n, m));
+		var n = Math.floor(ys.length / 2);
+		var m = ys.length;
 
-	var li = 0, ri = 0;
-	while (li < ls.length && ri < rs.length) {
-		if (ls[li] < rs[ri]) {
-			xs[li + ri] = ls[li];
-			li++;
-		} else {
-			xs[li + ri] = rs[ri];
-			ri++;
+		var ls = mergesort(ys, 0, n);
+		var rs = mergesort(ys, n, m);
+
+		var li = 0, ri = 0;
+		while (li < ls.length && ri < rs.length) {
+			if (ls[li] < rs[ri]) {
+				ys[li + ri] = ls[li];
+				li++;
+			} else {
+				ys[li + ri] = rs[ri];
+				ri++;
+			}
 		}
+
+		for (var i = li; i < ls.length; ++i)
+			ys[i + ri] = ls[i];
+		for (var i = ri; i < rs.length; ++i)
+			ys[li + i] = rs[i];
+
+		return ys;
 	}
 
-	for (var i = li; i < ls.length; ++i)
-		xs[i + ri] = ls[i];
-	for (var i = ri; i < rs.length; ++i)
-		xs[li + i] = rs[i];
+	if (xs === undefined)
+		return undefined;
 
-	return xs
+	return mergesort(xs, 0, xs.length);
 }
 
 
 function mergesort1(xs) {
 	if (xs === undefined || xs.length <= 1)
-		return xs
+		return undefined;
 
 	var step = 1;
 
