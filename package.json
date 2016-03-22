@@ -16,9 +16,13 @@
 		"coveralls": "^2.11.8",
 		"istanbul": "^0.4.2",
 		"mocha": "2.4.x",
-		"seedrandom": "2.4.x"
+		"seedrandom": "2.4.x",
+		"commitplease": "latest"
 	},
 	"scripts": {
 		"test": "istanbul cover _mocha -- --recursive tests"
+	},
+	"commitplease": {
+		"components": ["Build", "Test", "Core"]
 	}
 }
