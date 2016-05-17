@@ -1,5 +1,6 @@
 let assert = require('assert')
 let random = require('seedrandom')
+let randint = require('../randint')
 
 function issorted (xs) {
   for (let i = 1; i < xs.length; ++i) {
@@ -7,10 +8,6 @@ function issorted (xs) {
   }
 
   return true
-}
-
-function irandom (min, max) {
-  return Math.floor(Math.random() * (max - min)) + min
 }
 
 function check_on_empty (sort) {
@@ -68,7 +65,7 @@ function check_on_random (sort, n, seed) {
 
   let [xs, ys] = [[], []]
   for (let i = 0; i < n; ++i) {
-    xs[i] = irandom(-1024, 1024)
+    xs[i] = randint(-1024, 1024)
   }
 
   let zs = xs.slice()
