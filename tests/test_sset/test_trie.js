@@ -46,4 +46,40 @@ describe('Test Trie', function () {
       csset.check_random_words(new Trie(), times, 100, 100, 'abcdefgh')
     }
   })
+  describe('test gcp with empty key 0', function () {
+    csset.check_gcp_empty_0(new Trie())
+  })
+  describe('test gcp with empty key 1', function () {
+    csset.check_gcp_empty_1(new Trie())
+  })
+  describe('test gcp 0', function () {
+    csset.check_gcp_0(new Trie())
+  })
+  describe('test gcp 1', function () {
+    csset.check_gcp_1(new Trie())
+  })
+  describe('test gcp 2', function () {
+    csset.check_gcp_2(new Trie())
+  })
+  describe('test gcp 3', function () {
+    csset.check_gcp_3(new Trie())
+  })
+  describe('test startswith empty 0', function () {
+    csset.check_startswith_empty_0(new Trie())
+  })
+  describe('test startswith empty 1', function () {
+    csset.check_startswith_empty_1(new Trie())
+  })
+  describe('test startswith 0', function () {
+    csset.check_startswith_0(new Trie())
+  })
+  describe('test startswith 1', function () {
+    csset.check_startswith_1(new Trie())
+  })
+  describe('test startswith 2', function () {
+    csset.check_startswith_2(new Trie())
+  })
+  describe('test startswith 3', function () {
+    csset.check_startswith_3(new Trie())
+  })
 })

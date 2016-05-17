@@ -153,6 +153,120 @@ function check_random_words (ss, seed, n, m, alpha) {
   })
 }
 
+function check_gcp_empty_0 (ss) {
+  it('check gcp with empty key 0', function () {
+    assert.equal(ss.gcp(''), 0)
+  })
+}
+
+function check_gcp_empty_1 (ss) {
+  it('check gcp with empty key 1', function () {
+    ss.put('a', 42)
+    assert.equal(ss.gcp(''), 0)
+  })
+}
+
+exports.check_gcp_0 = function (ss) {
+  it('check gcp 0', function () {
+    ss.put('a', 0)
+    ss.put('b', 1)
+
+    assert.equal(ss.gcp('c'), 0)
+  })
+}
+
+exports.check_gcp_1 = function (ss) {
+  it('check gcp 1', function () {
+    ss.put('a', 0)
+    ss.put('b', 1)
+    ss.put('c', 2)
+
+    assert.equal(ss.gcp('c'), 1)
+  })
+}
+
+exports.check_gcp_2 = function (ss) {
+  it('check gcp 2', function () {
+    ss.put('a', 0)
+
+    assert.equal(ss.gcp('a'), 1)
+  })
+}
+
+exports.check_gcp_3 = function (ss) {
+  it('check gcp 3', function () {
+    ss.put('a', 0)
+
+    assert.equal(ss.gcp('aa'), 1)
+  })
+}
+
+exports.check_startswith_empty_0 = function (ss) {
+  it('check startswith empty 0', function () {
+    assert.deepEqual(ss.startswith(''), [])
+  })
+}
+
+exports.check_startswith_empty_1 = function (ss) {
+  it('check startswith empty 1', function () {
+    let words = ['a', 'b', 'c']
+    for (let i = 0; i < words.length; ++i) {
+      ss.put(words[i], i)
+    }
+
+    let result = ss.startswith('')
+
+    for (let i = 0; i < words.length; ++i) {
+      assert.equal(result.indexOf(words[i]) > -1, true)
+    }
+  })
+}
+
+exports.check_startswith_0 = function (ss) {
+  it('check startswith 0', function () {
+    ss.put('a', 0)
+
+    assert.deepEqual(ss.startswith('a'), ['a'])
+  })
+}
+
+exports.check_startswith_1 = function (ss) {
+  it('check startswith 1', function () {
+    let words = ['a', 'b']
+    for (let i = 0; i < words.length; ++i) {
+      ss.put(words[i], i)
+    }
+
+    for (let i = 0; i < words.length; ++i) {
+      assert.deepEqual(ss.startswith(words[i]), [words[i]])
+    }
+  })
+}
+
+exports.check_startswith_2 = function (ss) {
+  it('check startswith 2', function () {
+    let words = ['help', 'hell']
+    for (let i = 0; i < words.length; ++i) {
+      ss.put(words[i], i)
+    }
+
+    let result = ss.startswith('hel')
+
+    for (let i = 0; i < words.length; ++i) {
+      assert.equal(result.indexOf(words[i]) > -1, true)
+    }
+  })
+}
+
+exports.check_startswith_3 = function (ss) {
+  it('check startswith 2', function () {
+    ss.put('help', 0)
+
+    assert.deepEqual(ss.startswith('hell'), [])
+    assert.deepEqual(ss.startswith('helpme'), [])
+  })
+}
+
 exports.check_empty_key_0 = check_empty_key_0
 exports.check_empty_key_1 = check_empty_key_1
 
@@ -167,3 +281,6 @@ exports.check_words_3 = check_words_3
 exports.check_words_4 = check_words_4
 
 exports.check_random_words = check_random_words
+
+exports.check_gcp_empty_0 = check_gcp_empty_0
+exports.check_gcp_empty_1 = check_gcp_empty_1

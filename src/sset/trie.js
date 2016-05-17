@@ -36,6 +36,30 @@ class Node {
     let [node, _, i] = this.get_node_with_parent(key)
     return key.length !== i ? null : node.val
   }
+
+  gcp (key) {
+    return this.get_node_with_parent(key)[2]
+  }
+
+  startswith (key) {
+    let [node, _, i] = this.get_node_with_parent(key)
+
+    if (i < key.length) { return [] }
+
+    let results = []
+
+    function dfs (node, prefix) {
+      for (let letter in node.edges) {
+        dfs(node.edges[letter], prefix + letter)
+      }
+
+      if (node.val !== null) { results.push(prefix) }
+    }
+
+    dfs(node, key)
+
+    return results
+  }
 }
 
 class Trie {
@@ -61,6 +85,14 @@ class Trie {
     }
 
     node.put(key, val, i)
+  }
+
+  gcp (key) {
+    return this.root === null ? 0 : this.root.gcp(key)
+  }
+
+  startswith (key) {
+    return this.root === null ? [] : this.root.startswith(key)
   }
 }
 
