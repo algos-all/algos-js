@@ -1,34 +1,35 @@
 {
-  "name": "algos-js",
-  "version": "0.2.2",
-  "description": "Implementation of some CS algorithms in js",
-  "keywords": [
-    "algorithms"
-  ],
-  "homepage": "https://github.com/all3fox/algos-js",
-  "bugs": "https://github.com/all3fox/algos-js/issues",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/all3fox/algos-js.git"
-  },
-  "devDependencies": {
-    "mocha": "3.x.x",
-    "istanbul": "0.x.x",
-    "coveralls": "2.x.x",
-    "seedrandom": "2.4.x",
-    "commitplease": "latest"
-  },
-  "scripts": {
-    "test": "istanbul cover _mocha -- --recursive test"
-  },
-  "commitplease": {
-    "components": [
-      "Build",
-      "Test",
-      "Core"
+    "name": "algos-js",
+    "version": "0.2.2",
+    "description": "Implementation of some CS algorithms in js",
+    "keywords": [
+        "algorithms"
     ],
-    "actionPattern": "^([Ff]ix|[Rr]esolv)(e[sd]|ing)\\s+[^\\s\\d]+(\\s|$)",
-    "ticketPattern": "^(Closes|Fixes) (gh-|[A-Z]{2,}-)[0-9]+"
-  }
+    "homepage": "https://github.com/all3fox/algos-js",
+    "bugs": "https://github.com/all3fox/algos-js/issues",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/all3fox/algos-js.git"
+    },
+    "devDependencies": {
+        "mocha": "3.x.x",
+        "eslint": "3.x.x",
+        "istanbul": "0.x.x",
+        "coveralls": "2.x.x",
+        "seedrandom": "2.4.x",
+        "commitplease": "latest"
+    },
+    "scripts": {
+        "test": "eslint src test && istanbul cover _mocha -- --recursive test"
+    },
+    "commitplease": {
+        "components": [
+            "Build",
+            "Test",
+            "Core"
+        ],
+        "actionPattern": "^([Ff]ix|[Rr]esolv)(e[sd]|ing)\\s+[^\\s\\d]+(\\s|$)",
+        "ticketPattern": "^(Closes|Fixes) (gh-|[A-Z]{2,}-)[0-9]+"
+    }
 }
