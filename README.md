@@ -2,7 +2,7 @@
 
 [![Travis](https://img.shields.io/travis/all3fox/algos-js.svg)](https://travis-ci.org/all3fox/algos-js)
 [![Coveralls](https://img.shields.io/coveralls/all3fox/algos-js.svg)](https://coveralls.io/github/all3fox/algos-js)
-[![npm](https://img.shields.io/npm/v/npm.svg)](https://www.npmjs.com/package/algos-js)
+[![npm](https://img.shields.io/npm/v/algos-js.svg)](https://www.npmjs.com/package/algos-js)
 [![license](https://img.shields.io/github/license/all3fox/algos-js.svg)](https://choosealicense.com/licenses/mit/)
 
 ## What is algos-js?
