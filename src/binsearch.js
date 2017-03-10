@@ -1,11 +1,10 @@
 function binsearch (xs, v) {
     if (xs === undefined || xs.length === 0) { return null }
 
-    var lo = 0
-    var hi = xs.length - 1
+    let lo = 0, hi = xs.length - 1
 
     while (lo <= hi) {
-        var i = (lo + hi) / 2 | 0
+        let i = (lo + hi) / 2 | 0
 
         if (xs[i] === v) {
             return i
