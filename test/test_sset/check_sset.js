@@ -1,6 +1,7 @@
 let assert = require('assert')
 let random = require('seedrandom')
-let randint = require('../randint')
+
+let randint = require('../../src/random').randint
 
 function check_empty_key_0 (ss) {
     it(ss.name + ' empty get, empty sset', function () {

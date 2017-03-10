@@ -1,6 +1,7 @@
 let assert = require('assert')
 let random = require('seedrandom')
-let randint = require('../randint')
+
+let randint = require('../../src/random').randint
 
 function issorted (xs) {
     for (let i = 1; i < xs.length; ++i) {
