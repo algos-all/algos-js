@@ -1,17 +1,20 @@
-function binsearch (xs, v) {
-    if (xs === undefined || xs.length === 0) { return null }
+function binsearch (xs, val) {
+    if (xs === undefined || xs.length === 0) {
+        return null
+    }
 
-    let lo = 0, hi = xs.length - 1
+    let [fst, lst] = [0, xs.length - 1]
+    while (fst <= lst) {
+        let mid = fst + (lst - fst) / 2 | 0
 
-    while (lo <= hi) {
-        let i = (lo + hi) / 2 | 0
+        if (xs[mid] === val) {
+            return mid
+        }
 
-        if (xs[i] === v) {
-            return i
-        } else if (v < xs[i]) {
-            hi = i - 1
-        } else if (v > xs[i]) {
-            lo = i + 1
+        if (val < xs[mid]) {
+            lst = mid - 1
+        } else {
+            fst = mid + 1
         }
     }
 
