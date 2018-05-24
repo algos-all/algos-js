@@ -7,17 +7,17 @@
 
 ## What is algos-js?
 
-The algos-js package contains implementations of some classic computer
-science algorithms. My primary goal is to understand
-those algorithms and the best way to do that is to code them myself.
+This is my effort to pick up some JavaScript while implementing a few
+classic computer science algorithms along the way.
 
-Along the way I practice test driven development (with [mocha][1]),
+While doing so, I practice test driven development (with [mocha][1]),
 continuos integration (with [travis][2] and [coveralls][3]), version
 control (with [git][4] and [github][5]), packaging with [npm][6] and a
 lot more.
 
-<!-- ## What algorithms are ready? -->
+## What algorithms are ready?
 
+1. Binary search
 <!-- TODO -->
 
 <!-- ## How to install? -->
