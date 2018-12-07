@@ -7,17 +7,38 @@
 
 ## What is algos-js?
 
-This is my effort to pick up some JavaScript while implementing a few
-classic computer science algorithms along the way.
+This is a small project that contains several common computer science algorithms. It helps
+me both learn JavaScript and practice these algorithms along the way.
 
-While doing so, I practice test driven development (with [mocha][1]),
-continuos integration (with [travis][2] and [coveralls][3]), version
-control (with [git][4] and [github][5]), packaging with [npm][6] and a
-lot more.
+The project has a few tests implemented with the [mocha][1] testing framework. Continuous
+integration is done with [travis][2] and code coverage is available at [coveralls][3]. The
+default package manager is [yarn][6].
+
+## How to install?
+
+### Installing from GitHub
+
+You would need to clone the project with `git` and install its dependencies with `yarn`:
+
+```
+git clone https://github.com/alisianoi/algos-js
+cd algos-js
+yarn install
+```
+
+## How to uninstall?
+
+### After installing from GitHub
+
+Remove the folder that you cloned from GitHub:
+
+```
+rm -rf algos-js
+```
 
 ## What algorithms are ready?
 
-1. Binary search
+<!-- 1. Binary search -->
 <!-- TODO -->
 
 <!-- ## How to install? -->
@@ -32,19 +53,17 @@ lot more.
 
 ## How to test?
 
-To run all of the unit-tests:
+To run all the unit tests and produce a coverage report:
 
-```$ mocha --recursive```
+```yarn run test```
 
-To run unit-tests for a specific module:
+To run all the unit tests manually without the coverage report:
 
-```$ mocha test/test_binsearch.js```
+```./node_modules/mocha/bin/mocha --recursive```
 
-To run all the unit-tests and produce a coverage report:
+To run unit tests for a specific module:
 
-```$ npm test```
-
-<!-- ## How to uninstall? -->
+```./node_modules/mocha/bin/mocha test/test_binsearch.js```
 
 <!-- TODO -->
 
@@ -53,4 +72,4 @@ To run all the unit-tests and produce a coverage report:
 [3]: https://coveralls.io
 [4]: https://git-scm.com/
 [5]: https://github.com
-[6]: https://www.npmjs.com/
+[6]: https://yarnpkg.com/
