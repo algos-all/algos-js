@@ -13,8 +13,8 @@
     "url": "https://github.com/all3fox/algos-js.git"
   },
   "devDependencies": {
-    "coveralls": "2.x.x",
-    "eslint": "3.x.x",
+    "coveralls": "3.x.x",
+    "eslint": "5.x.x",
     "istanbul": "0.x.x",
     "mocha": "3.x.x",
     "seedrandom": "2.4.x"
