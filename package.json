@@ -1,16 +1,16 @@
 {
   "name": "algos-js",
   "version": "0.3.0",
-  "description": "Implementation of some CS algorithms in js",
+  "description": "Some computer science algorithms written in JavaScript",
   "keywords": [
     "algorithms"
   ],
-  "homepage": "https://github.com/all3fox/algos-js",
-  "bugs": "https://github.com/all3fox/algos-js/issues",
+  "homepage": "https://github.com/alisianoi/algos-js",
+  "bugs": "https://github.com/alisianoi/algos-js/issues",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/all3fox/algos-js.git"
+    "url": "https://github.com/alisianoi/algos-js.git"
   },
   "devDependencies": {
     "coveralls": "3.x.x",
